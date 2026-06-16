@@ -1,14 +1,14 @@
-# Projeto Chamados de TI — TechNova
+Projeto Chamados de TI — TechNova
 
-Projeto de portfólio em **Engenharia de Dados** que simula o fluxo completo de tratamento de chamados de suporte técnico de uma empresa fictícia.
+Projeto de portfólio, que simula o fluxo completo de tratamento de chamados de suporte técnico de uma empresa fictícia.
 
 Do dado bruto (CSV) até a visualização em dashboard (Power BI), passando por limpeza, transformação e armazenamento em banco relacional.
 
 ---
 
-## Descrição do projeto
+-> Descrição do projeto
 
-A **TechNova** possui uma equipe de suporte técnico que registra chamados diariamente. Este projeto:
+A TechNova possui uma equipe de suporte técnico que registra chamados diariamente. Este projeto:
 
 1. Gera dados fictícios de chamados de TI
 2. Executa um pipeline **ETL** (Extract, Transform, Load)
@@ -20,7 +20,7 @@ A **TechNova** possui uma equipe de suporte técnico que registra chamados diari
 
 ---
 
-## Arquitetura simplificada
+-> Arquitetura simplificada
 
 ```
 ┌─────────────────┐     ┌──────────────────┐     ┌─────────────────┐     ┌──────────────────┐
@@ -32,7 +32,7 @@ A **TechNova** possui uma equipe de suporte técnico que registra chamados diari
  generate_data.py           etl_pipeline.py
 ```
 
-### Fluxo de dados
+-> Fluxo de dados
 
 | Etapa | Script / Arquivo | O que acontece |
 |-------|------------------|----------------|
@@ -45,7 +45,7 @@ A **TechNova** possui uma equipe de suporte técnico que registra chamados diari
 
 ---
 
-## Tecnologias utilizadas
+-> Tecnologias utilizadas
 
 | Tecnologia | Papel no projeto |
 |------------|------------------|
@@ -58,7 +58,7 @@ A **TechNova** possui uma equipe de suporte técnico que registra chamados diari
 
 ---
 
-## Estrutura do projeto
+-> Estrutura do projeto
 
 ```
 projeto-chamados-ti/
@@ -81,16 +81,16 @@ projeto-chamados-ti/
 
 ---
 
-## Como executar o projeto
+-> Como executar o projeto
 
-### 1. Clonar o repositório
+-> 1. Clonar o repositório
 
 ```bash
 git clone https://github.com/SEU_USUARIO/projeto-chamados-ti.git
 cd projeto-chamados-ti
 ```
 
-### 2. Criar ambiente virtual (recomendado)
+-> 2. Criar ambiente virtual (recomendado)
 
 ```bash
 python -m venv .venv
@@ -102,13 +102,13 @@ python -m venv .venv
 source .venv/bin/activate
 ```
 
-### 3. Instalar dependências
+-> 3. Instalar dependências
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Gerar os dados fictícios
+-> 4. Gerar os dados fictícios
 
 ```bash
 python scripts/generate_data.py
@@ -116,7 +116,7 @@ python scripts/generate_data.py
 
 Saída esperada: `data/chamados_ti_raw.csv` com ~1200 registros.
 
-### 5. Executar o pipeline ETL
+-> 5. Executar o pipeline ETL
 
 ```bash
 python scripts/etl_pipeline.py
@@ -124,7 +124,7 @@ python scripts/etl_pipeline.py
 
 Saída esperada: `data/chamados_ti.db` com a tabela `chamados` populada.
 
-### 6. Validar consultas SQL
+-> 6. Validar consultas SQL
 
 ```bash
 python scripts/run_queries.py
@@ -138,7 +138,7 @@ sqlite3 data/chamados_ti.db < sql/consultas.sql
 
 Ou abra o banco no [DB Browser for SQLite](https://sqlitebrowser.org/).
 
-### 7. Exportar dados para o Power BI
+-> 7. Exportar dados para o Power BI
 
 ```bash
 python scripts/export_for_powerbi.py
@@ -146,13 +146,13 @@ python scripts/export_for_powerbi.py
 
 Gera `data/chamados_ti_clean.csv` — use este arquivo no Power BI.
 
-### 8. Criar o dashboard Power BI
+-> 8. Criar o dashboard Power BI
 
 Siga o guia em [`dashboard/POWERBI_GUIA.md`](dashboard/POWERBI_GUIA.md).
 
 ---
 
-## Consultas SQL — perguntas de negócio
+-> Consultas SQL — perguntas de negócio
 
 | Pergunta | Arquivo |
 |----------|---------|
@@ -164,7 +164,7 @@ Siga o guia em [`dashboard/POWERBI_GUIA.md`](dashboard/POWERBI_GUIA.md).
 
 ---
 
-## Dashboard Power BI
+-> Dashboard Power BI
 
 O dashboard deve conter:
 
@@ -174,7 +174,7 @@ O dashboard deve conter:
 - Tempo médio de resolução
 - Top 5 analistas
 
-### Print do dashboard
+-> Print do dashboard
 
 > Adicione aqui após criar o dashboard:
 
@@ -182,7 +182,7 @@ O dashboard deve conter:
 
 ---
 
-## Aprendizados obtidos
+-> Aprendizados obtidos
 
 Ao concluir este projeto, você pratica:
 
@@ -196,29 +196,29 @@ Ao concluir este projeto, você pratica:
 
 ---
 
-## Conceitos de Engenharia de Dados por etapa
+-> Conceitos de Engenharia de Dados por etapa
 
-### 1. Geração de dados (`generate_data.py`)
-
-| Conceito | O que você pratica |
-|----------|-------------------|
-| **Data sourcing** | Simular uma fonte de dados externa |
-| **Data modeling** | Definir schema (colunas e tipos) antes de gerar |
-| **Data realism** | Distribuições ponderadas (mais chamados fechados que abertos) |
-| **Dirty data** | Inserir erros propositais para praticar limpeza |
-
-**Por que inserir dados inválidos?** Na vida real, dados nunca chegam 100% limpos. Aprender a lidar com isso é essencial.
-
-### 2. Extract (`etl_pipeline.py`)
+-> 1. Geração de dados (`generate_data.py`)
 
 | Conceito | O que você pratica |
 |----------|-------------------|
-| **Data ingestion** | Ler dados de uma fonte (CSV) |
-| **Decoupling** | Separar leitura da transformação |
+| Data sourcing | Simular uma fonte de dados externa |
+| Data modeling| Definir schema (colunas e tipos) antes de gerar |
+| Data realism | Distribuições ponderadas (mais chamados fechados que abertos) |
+| Dirty data | Inserir erros propositais para praticar limpeza |
 
-**Por que CSV?** É o formato mais universal para troca de dados. APIs e bancos retornam dados que frequentemente viram CSV/Parquet.
+Por que inserir dados inválidos? Na vida real, dados nunca chegam 100% limpos. Aprender a lidar com isso é essencial.
 
-### 3. Transform (`etl_pipeline.py`)
+-> 2. Extract (`etl_pipeline.py`)
+
+| Conceito | O que você pratica |
+|----------|-------------------|
+| Data ingestion | Ler dados de uma fonte (CSV) |
+| Decoupling | Separar leitura da transformação |
+
+Por que CSV? É o formato mais universal para troca de dados. APIs e bancos retornam dados que frequentemente viram CSV/Parquet.
+
+-> 3. Transform (`etl_pipeline.py`)
 
 | Conceito | O que você pratica |
 |----------|-------------------|
@@ -229,7 +229,7 @@ Ao concluir este projeto, você pratica:
 
 **Por que calcular tempo de resolução?** Métricas derivadas são a base de KPIs. O dado bruto raramente responde perguntas de negócio diretamente.
 
-### 4. Load (`etl_pipeline.py` + `create_tables.sql`)
+-> 4. Load (`etl_pipeline.py` + `create_tables.sql`)
 
 | Conceito | O que você pratica |
 |----------|-------------------|
@@ -239,7 +239,7 @@ Ao concluir este projeto, você pratica:
 
 **Por que SQLite e não PostgreSQL?** Para aprendizado, SQLite é zero-config. Os conceitos (SQL, tabelas, índices) são os mesmos.
 
-### 5. SQL analítico (`consultas.sql`)
+-> 5. SQL analítico (`consultas.sql`)
 
 | Conceito | O que você pratica |
 |----------|-------------------|
@@ -249,7 +249,7 @@ Ao concluir este projeto, você pratica:
 
 **Por que SQL separado do Python?** Em empresas, analistas e engenheiros consultam o banco diretamente. Separar consultas facilita manutenção e reutilização.
 
-### 6. Dashboard Power BI
+-> 6. Dashboard Power BI
 
 | Conceito | O que você pratica |
 |----------|-------------------|
@@ -259,7 +259,7 @@ Ao concluir este projeto, você pratica:
 
 ---
 
-## Próximos passos (evolução do projeto)
+-> Próximos passos (evolução do projeto)
 
 Quando se sentir confortável, evolua o projeto:
 
@@ -272,12 +272,12 @@ Quando se sentir confortável, evolua o projeto:
 
 ---
 
-## Licença
+-> Licença
 
-Projeto educacional — livre para uso em portfólio e estudos.
+Projeto educacional / livre para uso em portfólio e estudos.
 
 ---
 
-## Autor
+-> Autor
 
 Projeto criado como exercício de aprendizado em Engenharia de Dados.
