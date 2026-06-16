@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# Dados gerados localmente (reproduza com os scripts)
+data/chamados_ti.db
+data/chamados_ti_raw.csv
+data/chamados_ti_clean.csv
+
+# Power BI
+*.pbix.tmp
