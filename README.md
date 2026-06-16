@@ -67,6 +67,7 @@ projeto-chamados-ti/
 ├── scripts/
 │   ├── generate_data.py   # Gera o CSV fictício
 │   ├── etl_pipeline.py    # Pipeline ETL completo
+│   ├── export_for_powerbi.py  # Exporta CSV para Power BI
 │   └── run_queries.py     # Executa consultas e exibe resultados
 ├── sql/
 │   ├── create_tables.sql  # Schema do banco
@@ -137,7 +138,15 @@ sqlite3 data/chamados_ti.db < sql/consultas.sql
 
 Ou abra o banco no [DB Browser for SQLite](https://sqlitebrowser.org/).
 
-### 7. Criar o dashboard Power BI
+### 7. Exportar dados para o Power BI
+
+```bash
+python scripts/export_for_powerbi.py
+```
+
+Gera `data/chamados_ti_clean.csv` — use este arquivo no Power BI.
+
+### 8. Criar o dashboard Power BI
 
 Siga o guia em [`dashboard/POWERBI_GUIA.md`](dashboard/POWERBI_GUIA.md).
 
